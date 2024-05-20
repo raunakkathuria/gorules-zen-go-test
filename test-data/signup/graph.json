@@ -1,0 +1,134 @@
+{
+  "contentType": "application/vnd.gorules.decision",
+  "edges": [
+    {
+      "id": "6cee9a7f-87a0-4673-b5dc-9875de126b88",
+      "type": "edge",
+      "sourceId": "59f284dd-babc-431b-9ff7-7db73260228f",
+      "targetId": "80d4dcd6-5edb-415b-8912-faad7d82005f"
+    },
+    {
+      "id": "aab02b20-5f6b-4b80-b898-d2248d67b100",
+      "type": "edge",
+      "sourceId": "6df1785e-909c-4b7d-ad89-0747168f2ae9",
+      "targetId": "59f284dd-babc-431b-9ff7-7db73260228f"
+    },
+    {
+      "id": "5ac255da-7cf8-4979-bfcf-d02d41f39deb",
+      "type": "edge",
+      "sourceId": "6df1785e-909c-4b7d-ad89-0747168f2ae9",
+      "targetId": "b5d45e09-d633-4e30-a7e8-2fb9e1b02097"
+    },
+    {
+      "id": "04681c2f-3c96-4cac-b55a-2c6004d7d68d",
+      "type": "edge",
+      "sourceId": "b5d45e09-d633-4e30-a7e8-2fb9e1b02097",
+      "targetId": "80d4dcd6-5edb-415b-8912-faad7d82005f"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "6df1785e-909c-4b7d-ad89-0747168f2ae9",
+      "name": "request",
+      "type": "inputNode",
+      "position": {
+        "x": 75,
+        "y": 190
+      }
+    },
+    {
+      "id": "59f284dd-babc-431b-9ff7-7db73260228f",
+      "name": "Signup",
+      "type": "decisionTableNode",
+      "content": {
+        "rules": [
+          {
+            "_id": "a81b64d6-9def-426b-9c2b-fbf473477d5e",
+            "4b1b0aef-c15b-4f09-9db9-96664c773f3f": "\"I hereby confirm that my request for opening an account with Deriv Investments (Europe) Ltd is made on my own initiative.\"",
+            "5b19cc37-03bd-4c1c-be93-142b2f45b68c": "\"real\"",
+            "830a71f0-ea96-4bf8-b716-f245a57f6c2e": "\"es\"",
+            "eaaf581c-9971-4560-b22e-3530bbf334ef": "true"
+          },
+          {
+            "_id": "4ca09b80-f0d7-4144-9e60-d9366201374b",
+            "4b1b0aef-c15b-4f09-9db9-96664c773f3f": "\"I hereby confirm that my request for opening an account with Deriv to to trade OTC products issued and offered exclusively outside Brazil was initiated by me. I fully understand that Deriv is not regulated by CVM and by approaching Deriv I intend to set up a relation with a foreign company.\"",
+            "5b19cc37-03bd-4c1c-be93-142b2f45b68c": "\"virtual\"",
+            "830a71f0-ea96-4bf8-b716-f245a57f6c2e": "\"br\"",
+            "eaaf581c-9971-4560-b22e-3530bbf334ef": "true"
+          },
+          {
+            "_id": "dfeaf3a2-6dff-4f13-a70d-0d63dfd9cc5f",
+            "4b1b0aef-c15b-4f09-9db9-96664c773f3f": "\"\"",
+            "5b19cc37-03bd-4c1c-be93-142b2f45b68c": "",
+            "830a71f0-ea96-4bf8-b716-f245a57f6c2e": "",
+            "eaaf581c-9971-4560-b22e-3530bbf334ef": "false"
+          },
+          {
+            "_id": "b2a66459-3e64-47ac-a79c-1f35453d53c2",
+            "4b1b0aef-c15b-4f09-9db9-96664c773f3f": "\"\"",
+            "5b19cc37-03bd-4c1c-be93-142b2f45b68c": "",
+            "830a71f0-ea96-4bf8-b716-f245a57f6c2e": "",
+            "eaaf581c-9971-4560-b22e-3530bbf334ef": "false"
+          }
+        ],
+        "inputs": [
+          {
+            "id": "830a71f0-ea96-4bf8-b716-f245a57f6c2e",
+            "name": "Residence",
+            "type": "expression",
+            "field": "residence"
+          },
+          {
+            "id": "5b19cc37-03bd-4c1c-be93-142b2f45b68c",
+            "name": "Account type",
+            "type": "expression",
+            "field": "account"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "eaaf581c-9971-4560-b22e-3530bbf334ef",
+            "name": "Disclaimer flag",
+            "type": "expression",
+            "field": "disclaimer.accept",
+            "defaultValue": "false"
+          },
+          {
+            "id": "4b1b0aef-c15b-4f09-9db9-96664c773f3f",
+            "name": "Disclaimer message",
+            "type": "expression",
+            "field": "disclaimer.message",
+            "defaultValue": "\"\""
+          }
+        ],
+        "hitPolicy": "first"
+      },
+      "position": {
+        "x": 465,
+        "y": 310
+      }
+    },
+    {
+      "id": "80d4dcd6-5edb-415b-8912-faad7d82005f",
+      "name": "response",
+      "type": "outputNode",
+      "position": {
+        "x": 1125,
+        "y": 190
+      }
+    },
+    {
+      "id": "b5d45e09-d633-4e30-a7e8-2fb9e1b02097",
+      "name": "Country landing company.json",
+      "type": "decisionNode",
+      "content": {
+        "key": "signup/country landing company.json"
+      },
+      "position": {
+        "x": 480,
+        "y": 125
+      }
+    }
+  ],
+  "meta": null
+}

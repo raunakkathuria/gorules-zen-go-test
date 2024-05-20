@@ -1,0 +1,88 @@
+{
+  "contentType": "application/vnd.gorules.decision",
+  "edges": [
+    {
+      "id": "83c563ac-fd62-4e3f-a488-b2bb11dc0ab9",
+      "type": "edge",
+      "sourceId": "a147e6b7-dcf5-4198-9055-55322e24c46a",
+      "targetId": "9fb26524-e03d-4313-b21a-c730f36535f7"
+    },
+    {
+      "id": "803216ce-ceb5-4d75-8de1-1de6751ba5ac",
+      "type": "edge",
+      "sourceId": "9fb26524-e03d-4313-b21a-c730f36535f7",
+      "targetId": "f4d23759-55cc-496f-a290-d437b8de1e13"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "9fb26524-e03d-4313-b21a-c730f36535f7",
+      "name": "country_landing_company",
+      "type": "decisionTableNode",
+      "content": {
+        "rules": [
+          {
+            "_id": "ac26da2e-d065-437c-86b2-449d046b75d7",
+            "4cbe3a75-dbf6-459a-ac67-adaf3fef7c39": "\"es\"",
+            "c4eefeeb-b478-403a-945b-0126870b2acd": "\"svg\""
+          },
+          {
+            "_id": "72333613-1f7c-4888-8f3c-4c136d9d37a2",
+            "4cbe3a75-dbf6-459a-ac67-adaf3fef7c39": "\"br\"",
+            "c4eefeeb-b478-403a-945b-0126870b2acd": "\"bvi\""
+          },
+          {
+            "_id": "74491d9b-486d-4b8c-be95-7caed244c96a",
+            "4cbe3a75-dbf6-459a-ac67-adaf3fef7c39": "\"de\"",
+            "c4eefeeb-b478-403a-945b-0126870b2acd": "\"maltainvest\""
+          },
+          {
+            "_id": "58d3ec78-a2a9-4e32-8708-7d211688bb6a",
+            "4cbe3a75-dbf6-459a-ac67-adaf3fef7c39": "",
+            "c4eefeeb-b478-403a-945b-0126870b2acd": "\"svg\""
+          }
+        ],
+        "inputs": [
+          {
+            "id": "4cbe3a75-dbf6-459a-ac67-adaf3fef7c39",
+            "name": "Country code",
+            "type": "expression",
+            "field": "residence"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "c4eefeeb-b478-403a-945b-0126870b2acd",
+            "name": "Landing company",
+            "type": "expression",
+            "field": "landing_company"
+          }
+        ],
+        "hitPolicy": "first"
+      },
+      "position": {
+        "x": 380,
+        "y": 160
+      }
+    },
+    {
+      "id": "a147e6b7-dcf5-4198-9055-55322e24c46a",
+      "name": "request",
+      "type": "inputNode",
+      "position": {
+        "x": 45,
+        "y": 160
+      }
+    },
+    {
+      "id": "f4d23759-55cc-496f-a290-d437b8de1e13",
+      "name": "response",
+      "type": "outputNode",
+      "position": {
+        "x": 705,
+        "y": 160
+      }
+    }
+  ],
+  "meta": null
+}
