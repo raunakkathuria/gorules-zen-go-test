@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"log"
 	"os"
 	"path"
 
@@ -35,10 +36,14 @@ func main() {
 		Loader: decisionLoader,
 	})
 
-	response, err := engine.Evaluate("signup/graph.json", map[string]any{"residence": "es", "account": "real"})
+	response, err := engine.EvaluateWithOpts("signup/graph.json", map[string]any{"residence": "es", "account": "real"}, zen.EvaluationOptions{
+		Trace:    true,
+		MaxDepth: 2,
+	})
+
 	if err != nil {
 		panic(err)
 	}
 
-	panic(response)
+	log.Printf("evaluating decision: %s", response.Trace)
 }
