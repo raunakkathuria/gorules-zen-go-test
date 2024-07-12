@@ -47,7 +47,7 @@
             "id": "4cbe3a75-dbf6-459a-ac67-adaf3fef7c39",
             "name": "Country code",
             "type": "expression",
-            "field": "residence"
+            "field": "country.code"
           }
         ],
         "outputs": [
@@ -55,7 +55,7 @@
             "id": "c4eefeeb-b478-403a-945b-0126870b2acd",
             "name": "Landing company",
             "type": "expression",
-            "field": "landing_company"
+            "field": "landing_company.default"
           }
         ],
         "hitPolicy": "first"

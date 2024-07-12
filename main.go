@@ -36,7 +36,7 @@ func main() {
 		Loader: decisionLoader,
 	})
 
-	response, err := engine.EvaluateWithOpts("signup/graph.json", map[string]any{"residence": "es", "account": "real"}, zen.EvaluationOptions{
+	response, err := engine.EvaluateWithOpts("signup/graph.json", map[string]any{"residence": "br", "account": "virtual", "user": "user"}, zen.EvaluationOptions{
 		Trace:    true,
 		MaxDepth: 2,
 	})
@@ -45,5 +45,5 @@ func main() {
 		panic(err)
 	}
 
-	log.Printf("evaluating decision: %s", response.Trace)
+	log.Printf("evaluating decision: %s", response.Result)
 }

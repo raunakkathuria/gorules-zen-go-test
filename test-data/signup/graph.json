@@ -8,21 +8,39 @@
       "targetId": "80d4dcd6-5edb-415b-8912-faad7d82005f"
     },
     {
-      "id": "aab02b20-5f6b-4b80-b898-d2248d67b100",
-      "type": "edge",
-      "sourceId": "6df1785e-909c-4b7d-ad89-0747168f2ae9",
-      "targetId": "59f284dd-babc-431b-9ff7-7db73260228f"
-    },
-    {
-      "id": "5ac255da-7cf8-4979-bfcf-d02d41f39deb",
-      "type": "edge",
-      "sourceId": "6df1785e-909c-4b7d-ad89-0747168f2ae9",
-      "targetId": "b5d45e09-d633-4e30-a7e8-2fb9e1b02097"
-    },
-    {
       "id": "04681c2f-3c96-4cac-b55a-2c6004d7d68d",
       "type": "edge",
       "sourceId": "b5d45e09-d633-4e30-a7e8-2fb9e1b02097",
+      "targetId": "80d4dcd6-5edb-415b-8912-faad7d82005f"
+    },
+    {
+      "id": "a19aa87c-a5e7-4acb-a26a-473342076fff",
+      "type": "edge",
+      "sourceId": "6df1785e-909c-4b7d-ad89-0747168f2ae9",
+      "targetId": "f1f0b935-991b-4917-953c-9859a9ca12d3"
+    },
+    {
+      "id": "5f3f3f77-b73f-4e9d-99c5-f9e8d0e03a5e",
+      "type": "edge",
+      "sourceId": "f1f0b935-991b-4917-953c-9859a9ca12d3",
+      "targetId": "b5d45e09-d633-4e30-a7e8-2fb9e1b02097"
+    },
+    {
+      "id": "591ffba8-4bcd-411f-83ac-147e8c4de6e3",
+      "type": "edge",
+      "sourceId": "f1f0b935-991b-4917-953c-9859a9ca12d3",
+      "targetId": "59f284dd-babc-431b-9ff7-7db73260228f"
+    },
+    {
+      "id": "60a66f65-a9af-4870-b6ce-1195ba34b17c",
+      "type": "edge",
+      "sourceId": "f1f0b935-991b-4917-953c-9859a9ca12d3",
+      "targetId": "d32e07a0-39dc-420d-96c1-970644a0ecd3"
+    },
+    {
+      "id": "0f548a84-a4ee-42a6-9ad2-81391216db3a",
+      "type": "edge",
+      "sourceId": "d32e07a0-39dc-420d-96c1-970644a0ecd3",
       "targetId": "80d4dcd6-5edb-415b-8912-faad7d82005f"
     }
   ],
@@ -38,7 +56,7 @@
     },
     {
       "id": "59f284dd-babc-431b-9ff7-7db73260228f",
-      "name": "Signup",
+      "name": "Disclaimer",
       "type": "decisionTableNode",
       "content": {
         "rules": [
@@ -62,21 +80,14 @@
             "5b19cc37-03bd-4c1c-be93-142b2f45b68c": "",
             "830a71f0-ea96-4bf8-b716-f245a57f6c2e": "",
             "eaaf581c-9971-4560-b22e-3530bbf334ef": "false"
-          },
-          {
-            "_id": "b2a66459-3e64-47ac-a79c-1f35453d53c2",
-            "4b1b0aef-c15b-4f09-9db9-96664c773f3f": "\"\"",
-            "5b19cc37-03bd-4c1c-be93-142b2f45b68c": "",
-            "830a71f0-ea96-4bf8-b716-f245a57f6c2e": "",
-            "eaaf581c-9971-4560-b22e-3530bbf334ef": "false"
           }
         ],
         "inputs": [
           {
             "id": "830a71f0-ea96-4bf8-b716-f245a57f6c2e",
-            "name": "Residence",
+            "name": "Country code",
             "type": "expression",
-            "field": "residence"
+            "field": "country.code"
           },
           {
             "id": "5b19cc37-03bd-4c1c-be93-142b2f45b68c",
@@ -104,8 +115,8 @@
         "hitPolicy": "first"
       },
       "position": {
-        "x": 465,
-        "y": 310
+        "x": 665,
+        "y": 305
       }
     },
     {
@@ -125,8 +136,183 @@
         "key": "signup/country landing company.json"
       },
       "position": {
-        "x": 480,
-        "y": 125
+        "x": 660,
+        "y": 85
+      }
+    },
+    {
+      "id": "f1f0b935-991b-4917-953c-9859a9ca12d3",
+      "name": "Input mapping",
+      "type": "expressionNode",
+      "content": {
+        "expressions": [
+          {
+            "id": "2d692f74-62d6-4c0f-bf36-dfb4e29d51fc",
+            "key": "country.code",
+            "value": "len(residence) > 0 ? residence : citizen"
+          },
+          {
+            "id": "4157b3d9-479b-4911-b236-6c1b79ccfdad",
+            "key": "account",
+            "value": "account"
+          },
+          {
+            "id": "ac48c225-676e-42a3-9222-984e13ab1e43",
+            "key": "user",
+            "value": "user"
+          },
+          {
+            "id": "b466269f-1a83-4ba9-9f7c-7a525ae1d2de",
+            "key": "citizen",
+            "value": "citizen"
+          },
+          {
+            "id": "07a70957-2218-44d0-971e-61041472b8e1",
+            "key": "residence",
+            "value": "residence"
+          },
+          {
+            "id": "77c5afef-d361-4a67-a2e5-f224592020ed",
+            "key": "citizen",
+            "value": "citizen"
+          }
+        ]
+      },
+      "position": {
+        "x": 370,
+        "y": 190
+      }
+    },
+    {
+      "id": "1b018943-aeaa-4183-9531-3921a6fd4046",
+      "name": "Risk level",
+      "type": "decisionTableNode",
+      "content": {
+        "rules": [
+          {
+            "_id": "0b54f33d-9a4e-4ee6-a14e-8730dae28b7a",
+            "785e5409-0994-474d-a3f7-1a383c8e918c": "\"standard\"",
+            "e666c43a-3d06-4d4b-8f58-8c3999d6857d": "\"br\"",
+            "fb8b324b-7c16-4c05-b6b6-7e1a29a8e8d2": "\"bvi\", \"labuan\""
+          },
+          {
+            "_id": "3b70705e-d4ef-4e81-83da-ffa6cad39ab7",
+            "785e5409-0994-474d-a3f7-1a383c8e918c": "\"low\"",
+            "e666c43a-3d06-4d4b-8f58-8c3999d6857d": "\"br\"",
+            "fb8b324b-7c16-4c05-b6b6-7e1a29a8e8d2": "\"vanuatu\""
+          },
+          {
+            "_id": "d3d46e88-1348-40e6-9596-c372116a9a09",
+            "785e5409-0994-474d-a3f7-1a383c8e918c": "\"low\"",
+            "e666c43a-3d06-4d4b-8f58-8c3999d6857d": "\"es\"",
+            "fb8b324b-7c16-4c05-b6b6-7e1a29a8e8d2": ""
+          }
+        ],
+        "inputs": [
+          {
+            "id": "e666c43a-3d06-4d4b-8f58-8c3999d6857d",
+            "name": "Country code",
+            "type": "expression",
+            "field": "country_code"
+          },
+          {
+            "id": "fb8b324b-7c16-4c05-b6b6-7e1a29a8e8d2",
+            "name": "Landing company",
+            "type": "expression",
+            "field": "landing_company"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "785e5409-0994-474d-a3f7-1a383c8e918c",
+            "name": "Risk level",
+            "type": "expression",
+            "field": "risk_level",
+            "defaultValue": "\"low\""
+          }
+        ],
+        "hitPolicy": "first"
+      },
+      "position": {
+        "x": 190,
+        "y": 720
+      }
+    },
+    {
+      "id": "d32e07a0-39dc-420d-96c1-970644a0ecd3",
+      "name": "Signup fields",
+      "type": "decisionTableNode",
+      "content": {
+        "rules": [
+          {
+            "_id": "5ae9ce26-1842-47a7-96ac-576fbd0c50cc",
+            "12a41a3c-3384-4e86-807f-c116439eb497": "true",
+            "4b1b0aef-c15b-4f09-9db9-96664c773f3f": "true",
+            "67139ef0-f770-42c7-b2c5-af547a23a0e2": "true",
+            "c36e57b2-e54c-415e-b7e9-f123f8f72943": "\"real\"",
+            "c4b2be6b-b3c2-4b97-a99e-d6dac1920461": "true",
+            "eaaf581c-9971-4560-b22e-3530bbf334ef": "true"
+          },
+          {
+            "_id": "dfeaf3a2-6dff-4f13-a70d-0d63dfd9cc5f",
+            "12a41a3c-3384-4e86-807f-c116439eb497": "true",
+            "4b1b0aef-c15b-4f09-9db9-96664c773f3f": "true",
+            "67139ef0-f770-42c7-b2c5-af547a23a0e2": "true",
+            "c36e57b2-e54c-415e-b7e9-f123f8f72943": "\"real\", \"virtual\"",
+            "c4b2be6b-b3c2-4b97-a99e-d6dac1920461": "",
+            "eaaf581c-9971-4560-b22e-3530bbf334ef": "true"
+          }
+        ],
+        "inputs": [
+          {
+            "id": "c36e57b2-e54c-415e-b7e9-f123f8f72943",
+            "name": "Account",
+            "type": "expression",
+            "field": "account",
+            "defaultValue": "true"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "eaaf581c-9971-4560-b22e-3530bbf334ef",
+            "name": "Residence",
+            "type": "expression",
+            "field": "residence.mandatory",
+            "defaultValue": "true"
+          },
+          {
+            "id": "4b1b0aef-c15b-4f09-9db9-96664c773f3f",
+            "name": "Citizen",
+            "type": "expression",
+            "field": "citizen.mandatory",
+            "defaultValue": "true"
+          },
+          {
+            "id": "12a41a3c-3384-4e86-807f-c116439eb497",
+            "name": "Password",
+            "type": "expression",
+            "field": "password.mandatory",
+            "defaultValue": "true"
+          },
+          {
+            "id": "67139ef0-f770-42c7-b2c5-af547a23a0e2",
+            "name": "Email",
+            "type": "expression",
+            "field": "email.mandatory",
+            "defaultValue": "true"
+          },
+          {
+            "id": "c4b2be6b-b3c2-4b97-a99e-d6dac1920461",
+            "name": "Address",
+            "type": "expression",
+            "field": "address_line_1.mandatory"
+          }
+        ],
+        "hitPolicy": "first"
+      },
+      "position": {
+        "x": 665,
+        "y": 445
       }
     }
   ],
